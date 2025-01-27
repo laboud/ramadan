@@ -16,12 +16,14 @@ body {
     font-size: 1.5em;
     font-weight: bold;
     color: white;
+
   }
   
   header .menu {
     list-style: none;
     display: flex;
     gap: 15px;
+
   }
   
   header .menu li {
@@ -30,7 +32,7 @@ body {
   
   header .menu a {
     text-decoration: none;
-    color: #333;
+    color: #fff5f5;
   }
   
   header .profile {

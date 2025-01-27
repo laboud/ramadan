@@ -18,7 +18,11 @@ body {
     color: white;
 
   }
+  header span{
+    color: rgb(254 206 120);
+  }
   
+
   header .menu {
     list-style: none;
     display: flex;

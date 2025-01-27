@@ -101,3 +101,36 @@ curr_track.addEventListener('timeupdate', function () {
 });
 
 loadTrack(track_index);
+
+let search = document.querySelector("input");
+let searchResults = document.querySelector(".search-results");
+
+let apps = [
+    { name: "سورة الفاتحة", others: ["الفاتحة", "فاتحة الكتاب", "السبع المثاني"] },
+    { name: "سورة البقرة", others: ["البقرة", "أطول سورة", "المصحف"] }
+];
+
+search.addEventListener("keyup", () => {
+    let searchValue = search.value.toLowerCase();
+    searchResults.innerHTML = "";
+
+    if (searchValue === "") {
+        searchResults.innerHTML = "<p>الرجاء إدخال نص للبحث</p>";
+    } else {
+        let found = false;
+        apps.forEach(app => {
+            if (app.others.some(others => others.includes(searchValue))) {
+                searchResults.innerHTML += `
+                    <div class="box-btn">
+                        <button>${app.name}</button>
+                        <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                `;
+                found = true;
+            }
+        });
+        if (!found) {
+            searchResults.innerHTML = `<p>لا توجد نتائج</p>`;
+        }
+    }
+});

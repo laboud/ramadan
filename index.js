@@ -26,14 +26,14 @@ const music_list = [
         img : 'img/mh.jpg',
         name : 'AL-fatiha-الفاتحة',
         artist : 'محمد اللحيدان',
-        music : 'audio/dd.m4a'
+        audio : 'audio/dd.m4a'
     },
     {
         
         img : 'img/mh.jpg',
         name : 'محمد اللحيدان',
         artist : 'AL-fatiha-الفاتحة',
-        music : 'audio/Beautiful recitation of surah Al-Fatiha with translation - Muhammad Al-Luhaidan.m4a'
+        audio : 'audio/Beautiful recitation of surah Al-Fatiha with translation - Muhammad Al-Luhaidan.m4a'
     },
     {
    

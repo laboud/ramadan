@@ -23,28 +23,31 @@ let updateTimer;
 
 const music_list = [
     {
-        img : 'images/stay.png',
-        name : 'Stay',
-        artist : 'The Kid LAROI, Justin Bieber',
-        music : 'music/stay.mp3'
+        img : 'img/mh.jpg',
+        name : 'محمد اللحيدان',
+        artist : 'AL-fatiha-الفاتحة',
+        music : 'audio/Beautiful recitation of surah Al-Fatiha with translation - Muhammad Al-Luhaidan.m4a'
     },
     {
-        img : 'images/fallingdown.jpg',
-        name : 'Falling Down',
-        artist : 'Wid Cards',
-        music : 'music/fallingdown.mp3'
+        
+        img : 'img/mh.jpg',
+        name : 'محمد اللحيدان',
+        artist : 'AL-fatiha-الفاتحة',
+        music : 'audio/Beautiful recitation of surah Al-Fatiha with translation - Muhammad Al-Luhaidan.m4a'
     },
     {
-        img : 'images/faded.png',
-        name : 'Faded',
-        artist : 'Alan Walker',
-        music : 'music/Faded.mp3'
+   
+        img : 'img/mh.jpg',
+        name : 'محمد اللحيدان',
+        artist : 'AL-fatiha-الفاتحة',
+        music : 'audio/Beautiful recitation of surah Al-Fatiha with translation - Muhammad Al-Luhaidan.m4a'
     },
     {
-        img : 'images/ratherbe.jpg',
-        name : 'Rather Be',
-        artist : 'Clean Bandit',
-        music : 'music/Rather Be.mp3'
+        
+        img : 'img/mh.jpg',
+        name : 'محمد اللحيدان',
+        artist : 'AL-fatiha-الفاتحة',
+        music : 'audio/Beautiful recitation of surah Al-Fatiha with translation - Muhammad Al-Luhaidan.m4a'
     }
 ];
 

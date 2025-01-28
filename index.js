@@ -14,7 +14,7 @@ let curr_time = document.querySelector('.current-time');
 let total_duration = document.querySelector('.total-duration');
 let curr_track = document.createElement('audio');
 
-let track_index = 0;
+let track_index = 1;
 let isPlaying = false;
 
 const music_list = [
@@ -41,11 +41,10 @@ const music_list = [
 function loadTrack(track_index) {
     curr_track.src = music_list[track_index].audio;
     curr_track.load();
-
-    track_art.style.backgroundImage = "url(" + music_list[track_index].img + ")";
+    track_art.style.backgroundImage = "url(" + music_list[track_index  ].img + ")";
     track_name.textContent = music_list[track_index].name;
     track_artist.textContent = music_list[track_index].artist;
-    now_playing.textContent = "Playing " + (track_index + 1) + " of " + music_list.length;
+    now_playing.textContent = "Playing " + (track_index +1) + " of " + music_list.length;
 }
 
 function playpauseTrack() {
@@ -100,10 +99,8 @@ curr_track.addEventListener('timeupdate', function () {
     total_duration.textContent = `${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
 });
 
-loadTrack(track_index);
-
-let search = document.querySelector("input");
-let searchResults = document.querySelector(".search-results");
+let search = document.querySelector("aside input");
+let searchResults = document.querySelector("div.player");
 
 let apps = [
     { name: "سورة الفاتحة", others: ["الفاتحة", "فاتحة الكتاب", "السبع المثاني"] },
@@ -111,26 +108,120 @@ let apps = [
 ];
 
 search.addEventListener("keyup", () => {
-    let searchValue = search.value.toLowerCase();
+    let searchValue = search.value.trim().toLowerCase(); 
     searchResults.innerHTML = "";
 
     if (searchValue === "") {
-        searchResults.innerHTML = "<p>الرجاء إدخال نص للبحث</p>";
+        searchResults.innerHTML = `
+        <div class="player">
+        <div class="wrapper">
+            <div class="details">
+                <div class="now-playing">PLAYING 1 OF 4</div>
+                <div class="track-art"></div>
+                <div class="track-name">Track Name</div>
+                <div class="track-artist">Track Artist</div>
+            </div>
+
+            <div class="slider_container">
+                <div class="current-time">00:00</div>
+                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                <div class="total-duration">00:00</div>
+            </div>
+
+            <div class="slider_container">
+                <i class="fa fa-volume-down"></i>
+                <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                <i class="fa fa-volume-up"></i>
+            </div>
+
+            <div class="buttons">
+                <div class="random-track" onclick="randomTrack()">
+                    <i class="fas fa-random fa-2x" title="Random"></i>
+                </div>
+                <div class="prev-track" onclick="prevTrack()">
+                    <i class="fa fa-step-backward fa-2x"></i>
+                </div>
+                <div class="playpause-track" onclick="playpauseTrack()">
+                    <i class="fa fa-play-circle fa-5x"></i>
+                </div>
+                <div class="next-track" onclick="nextTrack()">
+                    <i class="fa fa-step-forward fa-2x"></i>
+                </div>
+                <div class="repeat-track" onclick="repeatTrack()">
+                    <i class="fa fa-repeat fa-2x" title="Repeat"></i>
+                </div>
+            </div>
+
+            <div id="wave">
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+                <span class="stroke"></span>
+            </div>
+        </div>
+    </div>
+        `;
     } else {
         let found = false;
         apps.forEach(app => {
-            if (app.others.some(others => others.includes(searchValue))) {
+            if (app.others.some(other => other.toLowerCase().includes(searchValue))) {
                 searchResults.innerHTML += `
-                    <div class="box-btn">
-                        <button>${app.name}</button>
-                        <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <div class="player">
+                
+                <div class="wrapper">
+                    <div class="details">
+                        <div class="now-playing">PLAYING 1 OF 4</div>
+                        <div class="track-art"></div>
+                        <div class="track-name">Track Name</div>
+                        <div class="track-artist">Track Artist</div>
                     </div>
+    
+                    <div class="slider_container">
+                        <div class="current-time">00:00</div>
+                        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+                        <div class="total-duration">00:00</div>
+                    </div>
+    
+                    <div class="slider_container">
+                        <i class="fa fa-volume-down"></i>
+                        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                        <i class="fa fa-volume-up"></i>
+                    </div>
+    
+                    <div class="buttons">
+                        <div class="random-track" onclick="randomTrack()">
+                            <i class="fas fa-random fa-2x" title="Random"></i>
+                        </div>
+                        <div class="prev-track" onclick="prevTrack()">
+                            <i class="fa fa-step-backward fa-2x"></i>
+                        </div>
+                        <div class="playpause-track" onclick="playpauseTrack()">
+                            <i class="fa fa-play-circle fa-5x"></i>
+                        </div>
+                        <div class="next-track" onclick="nextTrack()">
+                            <i class="fa fa-step-forward fa-2x"></i>
+                        </div>
+                        <div class="repeat-track" onclick="repeatTrack()">
+                            <i class="fa fa-repeat fa-2x" title="Repeat"></i>
+                        </div>
+                    </div>
+    
+                    <div id="wave">
+                        <span class="stroke"></span>
+                        <span class="stroke"></span>
+                        <span class="stroke"></span>
+                        <span class="stroke"></span>
+                        <span class="stroke"></span>
+                    </div>
+                </div>
+            </div>
                 `;
                 found = true;
             }
         });
         if (!found) {
-            searchResults.innerHTML = `<p>لا توجد نتائج</p>`;
+            searchResults.innerHTML = `<p style='color: #888;'>لا توجد نتائج لـ "${searchValue}"</p>`;
         }
     }
 });

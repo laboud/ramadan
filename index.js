@@ -104,7 +104,7 @@ let searchResults = document.querySelector("div.player");
 
 let apps = [
     { name: "سورة الفاتحة", others: ["الفاتحة", "فاتحة الكتاب", "السبع المثاني"] },
-    { name: "سورة البقرة", others: ["البقرة", "أطول سورة", "المصحف"] }
+    { name: "AL-Baqara - البقرة", others: ["البقرة", "أطول سورة", "المصحف"] }
 ];
 
 search.addEventListener("keyup", () => {

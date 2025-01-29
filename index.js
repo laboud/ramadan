@@ -16,7 +16,7 @@ const music_list = [
         artist: 'محمد اللحيدان',
         img: '../img/mohamed-al-haidan-2899.jpg',
         audio: 'https://media.sd.ma/assabile/recitations_7892537823/mp3/mohammed-al-lohaidan-003-aal-e-imran-8577-175.mp3'
-    }
+    },
 ];
 
 let currentTrack = null;

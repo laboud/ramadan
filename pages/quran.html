@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+<head>
     <link rel="stylesheet" href="../css/quran.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Quran</title>
-<head>
-
 </head>
 
 <body>
@@ -20,75 +19,28 @@
             </ul>
         </nav>
     </header>
-  
+   
+
     <aside>
-  
-        <input type="search" placeholder="ابحث عن سورة...">
-        <div class="search-results">
-            <div class="start-button" onclick="startListening()">
-                <i class="fa fa-play"></i>
-            </div>
-            <div class="search-item">
-                <div class="mini-player">
-                    <button class="play-btn"><i class="fa fa-play"></i></button>
-                    <input type="range" class="mini-progress" value="0">
-                    <audio class="mini-audio" src="https://media.sd.ma/assabile/recitations_7892537823/mp3/mohammed-al-lohaidan-001-al-fatiha-8575-3583.mp3"></audio>
-                    <div class="volume-control">
-                        <i class="fa fa-volume-up"></i>
-                        <input type="range" class="mini-volume" min="0" max="1" step="0.1" value="1">
-                    </div>
-                </div>
-                <img src="../img/mh.jpg" alt="Al-Fatiha">
-                <div>
-                    <h3>سورة الفاتحة</h3>
-                    <p>محمد اللحيدان</p>
-                </div>
-            </div>
-        </div>
-        <div class="search-results">
-            <div class="start-button" onclick="startListening()">
-                <i class="fa fa-play"></i>
-            </div>
-        <div class="search-item">
-            <div class="mini-player">
-                <button class="play-btn"><i class="fa fa-play"></i></button>
-                <input type="range" class="mini-progress" value="0">
-                <audio class="mini-audio" src="https://media.sd.ma/assabile/recitations_7892537823/mp3/mohammed-al-lohaidan-001-al-fatiha-8575-3583.mp3"></audio>
-                <div class="volume-control">
-                    <i class="fa fa-volume-up"></i>
-                    <input type="range" class="mini-volume" min="0" max="1" step="0.1" value="1">
-                </div>
-            </div>
-            <img src="../img/mh.jpg" alt="Al-Fatiha">
-            <div>
-                <h3>سورة الفاتحة</h3>
-                <p>محمد اللحيدان</p>
-            </div>
-        </div>
-        <div class="search-results">
-            <div class="start-button" onclick="startListening()">
-                <i class="fa fa-play"></i>
-            </div>
-        <div class="search-item">
-            <div class="mini-player">
-                <button class="play-btn"><i class="fa fa-play"></i></button>
-                <input type="range" class="mini-progress" value="0">
-                <audio class="mini-audio" src="https://media.sd.ma/assabile/recitations_7892537823/mp3/mohammed-al-lohaidan-001-al-fatiha-8575-3583.mp3"></audio>
-                <div class="volume-control">
-                    <i class="fa fa-volume-up"></i>
-                    <input type="range" class="mini-volume" min="0" max="1" step="0.1" value="1">
-                </div>
-            </div>
-            <img src="../img/mh.jpg" alt="Al-Fatiha">
-            <div>
-                <h3>سورة الفاتحة</h3>
-                <p>محمد اللحيدان</p>
-            </div>
+        <h1>اكتب اسم الاية او السورة:</h1>
+        <input type="search" id="searchInput" placeholder="ابحث عن سورة...">
+        <div id="searchResults"></div>
+    </aside>
+    <div class="parallax">
+        <div class="content">
+            <h2>تلاوات القرآن الكريم</h2>
+            <p>استمتع بتلاوة القرآن من أفضل القراء</p>
         </div>
     </div>
-    </aside>
-    <div class="ayah-display" id="currentAyah">
+    <div class="ayah-display scroll-animation" id="currentAyah">
         ﴿بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ﴾
     </div>
+
+    <div id="loading-bar">
+        <div id="loading-progress"></div>
+    </div>
+
+
+    <script src="../index.js"></script>
 </body>
 </html>

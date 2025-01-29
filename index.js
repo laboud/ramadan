@@ -8,13 +8,13 @@ const music_list = [
     {
         name: 'سورة البقرة',
         artist: 'محمد اللحيدان',
-        img: '../img/mh.jpg',
+        img: '../img/mohamed-al-haidan.png',
         audio: 'https://media.sd.ma/assabile/recitations_7892537823/mp3/mohammed-al-lohaidan-002-al-baqara.mp3'
     },
     {
         name: 'سورة آل عمران',
         artist: 'محمد اللحيدان',
-        img: '../img/mh.jpg',
+        img: '../img/mohamed-al-haidan-2899.jpg',
         audio: 'https://media.sd.ma/assabile/recitations_7892537823/mp3/mohammed-al-lohaidan-003-aal-e-imran.mp3'
     }
 ];

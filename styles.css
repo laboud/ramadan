@@ -1,0 +1,85 @@
+
+body {
+    background-image: url(img/812.jpg) ;
+    header nav {
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0b4aa9;
+        padding: 10px 30px;
+        border-bottom: 2px solid #181616;
+     
+      
+    }
+}
+  header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+
+  }
+  header span{
+    color: rgb(254 206 120);
+  }
+  
+
+  header .menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+
+  }
+  
+  header .menu li {
+    display: inline;
+  }
+  
+  header .menu a {
+    text-decoration: none;
+    color: #fff5f5;
+  }
+  
+  header .profile {
+    display: flex;
+    align-items: center;
+    
+    gap: 10px;
+  }
+  
+  header .profile input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  header .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+
+ header img{
+    width:  50px;
+}
+.wl-cm img{
+    width:800px;
+}
+
+.wl-cm{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.wl-cm h1  {
+    color: rgb(203 156 93);
+text-align: center;
+padding-bottom: 50px;
+border-bottom: 2px solid #fff2f2;
+}
+.wl-cm h2 {
+    color: rgb(254 206 120);
+    text-align: center;
+    
+}
